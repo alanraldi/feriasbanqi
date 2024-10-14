@@ -86,6 +86,10 @@ document.addEventListener("DOMContentLoaded", async function () {
         const firstDay = new Date(year, month).getDay();
         const daysInMonth = new Date(year, month + 1, 0).getDate();
         const today = new Date(); // Obtemos a data atual
+        const todayDay = today.getDate(); // Dia atual
+        const todayMonth = today.getMonth(); // Mês atual
+        const todayYear = today.getFullYear(); // Ano atual
+
         mesAno.textContent = `${new Date(year, month).toLocaleString('default', { month: 'long' })} ${year}`;
 
         let date = 1;
@@ -104,9 +108,14 @@ document.addEventListener("DOMContentLoaded", async function () {
                 } else {
                     const cell = document.createElement('td');
                     const cellText = document.createTextNode(date);
+
+                    // Verifica se o dia atual coincide com o dia do calendário
+                    if (date === todayDay && month === todayMonth && year === todayYear) {
+                        cell.classList.add('highlight-today'); // Adiciona uma classe para destacar o dia atual
+                    }
+
                     cell.appendChild(cellText);
 
-                    // Verifica se essa data está dentro do intervalo de férias/day off de algum registro
                     const cellDate = new Date(year, month, date); // Objeto Date para o dia atual do calendário
                     storedData.forEach((entry) => {
                         const dataInicio = new Date(entry.dataInicio); // Convertendo a dataInicio para objeto Date
@@ -135,12 +144,12 @@ document.addEventListener("DOMContentLoaded", async function () {
                             const tooltipText = document.createElement('div');
                             tooltipText.className = 'tooltiptext';
                             tooltipText.innerHTML = `
-                                <strong>Nome:</strong> ${entry.nome}<br>
-                                <strong>Squad:</strong> ${entry.squad}<br>
-                                <strong>Tipo:</strong> ${entry.tipo}<br>
-                                <strong>Data de Início:</strong> ${entry.dataInicio}<br>
-                                <strong>Data de Término:</strong> ${entry.dataFim}
-                            `;
+                            <strong>Nome:</strong> ${entry.nome}<br>
+                            <strong>Squad:</strong> ${entry.squad}<br>
+                            <strong>Tipo:</strong> ${entry.tipo}<br>
+                            <strong>Data de Início:</strong> ${entry.dataInicio}<br>
+                            <strong>Data de Término:</strong> ${entry.dataFim}
+                        `;
                             tooltip.appendChild(tooltipText);
 
                             span.appendChild(tooltip);
@@ -185,12 +194,12 @@ document.addEventListener("DOMContentLoaded", async function () {
             const tooltipText = document.createElement('div');
             tooltipText.className = 'tooltiptext';
             tooltipText.innerHTML = `
-                <strong>Nome:</strong> ${profissional.nome}<br>
-                <strong>Squad:</strong> ${profissional.squad}<br>
-                <strong>Tipo:</strong> ${profissional.tipo}<br>
-                <strong>Data de Início:</strong> ${profissional.dataInicio}<br>
-                <strong>Data de Término:</strong> ${profissional.dataFim}
-            `;
+            <strong>Nome:</strong> ${profissional.nome}<br>
+            <strong>Squad:</strong> ${profissional.squad}<br>
+            <strong>Tipo:</strong> ${profissional.tipo}<br>
+            <strong>Data de Início:</strong> ${profissional.dataInicio}<br>
+            <strong>Data de Término:</strong> ${profissional.dataFim}
+        `;
 
             tooltip.appendChild(tooltipText);
             listItem.appendChild(tooltip);

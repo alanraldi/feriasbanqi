@@ -6,6 +6,25 @@ body {
     padding: 20px;
 }
 
+
+/* Estilo para destacar o dia atual no calendário */
+.highlight-today {
+    background-color: #94a2a0;
+    /* Cor de fundo para destacar o dia atual */
+    color: white;
+    /* Cor do texto para contraste */
+    font-weight: bold;
+    /* Negrito para destacar o dia */
+    text-align: center;
+    padding: 10px;
+    /* Ajuste de padding para cobrir toda a célula */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Adicionar sombra interna */
+    border-radius: 0;
+    /* Sem bordas arredondadas para cobrir toda a célula */
+}
+
+
 /* Container principal */
 .container {
     max-width: 800px;
