@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     const form = document.getElementById('cadastro-form');
     const mesAno = document.getElementById('mes-ano');
+    mesAno.style.textTransform = 'uppercase';
     const diasCalendario = document.getElementById('dias-calendario');
     const feriasLista = document.getElementById('ferias-lista'); // Lista de profissionais de férias
     let currentMonth = new Date().getMonth();
