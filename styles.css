@@ -6,7 +6,6 @@ body {
     padding: 20px;
 }
 
-
 /* Estilo para destacar o dia atual no calendário */
 .highlight-today {
     background-color: #94a2a0;
@@ -23,7 +22,6 @@ body {
     border-radius: 0;
     /* Sem bordas arredondadas para cobrir toda a célula */
 }
-
 
 /* Container principal */
 .container {
@@ -42,7 +40,6 @@ body {
     display: block;
     margin: 0 0 20px 0;
     /* Remover alinhamento central e ajustar margens */
-    /* Centraliza o logo e adiciona espaçamento abaixo */
 }
 
 /* Títulos */
@@ -215,19 +212,14 @@ td {
     background-color: #007BFF;
     color: white;
     padding: 4px;
-    /* Reduzir o padding */
     margin-bottom: 5px;
-    /* Reduzir o espaço entre os itens */
     border-radius: 4px;
     font-size: 12px;
-    /* Diminuir o tamanho da fonte */
     line-height: 1.2;
-    /* Diminuir a altura das linhas */
     position: relative;
-    /* Necessário para o tooltip */
 }
 
-/* Tooltip container */
+/* Tooltip para lista */
 .tooltip {
     position: relative;
     display: inline-block;
@@ -269,4 +261,46 @@ td {
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
+}
+
+/* Estilização geral para responsividade */
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Para telas menores (smartphones) */
+@media only screen and (max-width: 768px) {
+    .calendario-lista-container {
+        flex-direction: column;
+    }
+
+    #lista-ferias {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    table {
+        font-size: 12px;
+        /* Reduzir tamanho da fonte em telas menores */
+    }
+
+    button {
+        width: 100%;
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+/* Para telas maiores (desktop e tablets) */
+@media only screen and (min-width: 769px) {
+    .calendario-lista-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #lista-ferias {
+        width: 30%;
+    }
 }
