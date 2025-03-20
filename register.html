@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Registrar - Site de Férias</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script defer src="auth.js"></script>
+</head>
+<body>
+  <div class="register-container">
+    <h2>Registrar</h2>
+    <form id="register-form">
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" required>
+      <label for="password">Senha:</label>
+      <input type="password" id="password" required>
+      <label for="confirm-password">Confirmar Senha:</label>
+      <input type="password" id="confirm-password" required>
+      <button type="submit">Registrar</button>
+    </form>
+    <p><a href="login.html">Já tem uma conta? Faça login</a></p>
+  </div>
+</body>
+</html>

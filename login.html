@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Site de Férias</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script defer src="auth.js"></script>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" required>
+      <label for="password">Senha:</label>
+      <input type="password" id="password" required>
+      <button type="submit">Entrar</button>
+    </form>
+    <p><a href="register.html">Registrar novo usuário</a></p>
+    <p><a href="#" id="forgot-password">Esqueci minha senha</a></p>
+  </div>
+</body>
+</html>
